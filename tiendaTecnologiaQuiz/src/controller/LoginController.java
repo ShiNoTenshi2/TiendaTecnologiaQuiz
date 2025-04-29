@@ -19,8 +19,8 @@ public class LoginController {
     @FXML
     private TextField txtUsuario;
     
-    private Connection connection = DBConnection.getInstance().getConnection();
-    private UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
+    //private Connection connection = DBConnection.getInstance().getConnection();
+    //private UsuarioDAO usuarioDAO = new UsuarioDAO(connection);
     
 
     @FXML

@@ -1,6 +1,10 @@
 package controller;
 
 
+import java.sql.Connection;
+
+import data.DBConnection;
+import data.ProductoDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -32,6 +36,9 @@ public class RegistroProductosController {
 
     @FXML
     private TextField txtReferencia;
+    
+    //private Connection connection = DBConnection.getInstance().getConnection();
+    //private ProductoDAO usuarioDAO = new ProductoDAO(connection);
 
     @FXML
     void eliminar(ActionEvent event) {
