@@ -21,17 +21,20 @@ public class UsuarioDAO {
 
 
 
-	public ArrayList<Usuario> fetch() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
 
 	public boolean authenticate(String nickname, String contraseña) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
+		  String sql = "SELECT * FROM Usuario WHERE nickname=? AND contraseña=?";
+	        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+	            stmt.setString(1, nickname);
+	            stmt.setString(2, contraseña);
+	            ResultSet rs = stmt.executeQuery();
+	            if (rs.next()) {
+	                return rs.getString("nickname").equals(nickname) && rs.getString("contraseña").equals(contraseña);
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	        return false;
+	    }
 
 }
